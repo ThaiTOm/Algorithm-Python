@@ -1,9 +1,18 @@
-def is_mersenne_prime(n):
-    if n <= 3:
-        return n > 2
-    if 2**int(math.log(n+1, 2)) - 1 != n:
-        return False
-    s = 4
-    for i in range(int(math.log(n+1, 2)) - 2):
-        s = ((s * s) - 2) % n
-    return True if s == 0 else False
+def findNumber(n):
+    if n < 10:
+        return n
+    s = str(n)
+
+    if int(s[0]) > int(s[1]):
+        for i in range(1, len(s)-1):
+            if int(s[i]) < int(s[i+1]):
+                s[i+1] = int(s[i]) - 1
+        print(s)
+    else:
+        for i in range(0, len(s)-1):
+            return
+
+    return
+
+
+findNumber(968)
