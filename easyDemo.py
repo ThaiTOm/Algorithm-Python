@@ -1,18 +1,17 @@
-def findNumber(n):
-    if n < 10:
-        return n
-    s = str(n)
+def demo(nums):
+    i = 0
+    sb = 0
+    ls = 0
+    while i < len(nums) - 2:
+        if nums[i] > nums[i+1]:
+            sb += 1
+            print(ls, nums[i+1], nums[i])
+            if sb > 1 or (ls < nums[i+1] and ls > nums[i]):
+                return False
+        ls = nums[i]
+        i += 1
+    print("TRue")
+    return True
 
-    if int(s[0]) > int(s[1]):
-        for i in range(1, len(s)-1):
-            if int(s[i]) < int(s[i+1]):
-                s[i+1] = int(s[i]) - 1
-        print(s)
-    else:
-        for i in range(0, len(s)-1):
-            return
 
-    return
-
-
-findNumber(968)
+demo([3, 4, 2, 3])
