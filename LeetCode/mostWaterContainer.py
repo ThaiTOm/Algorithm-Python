@@ -4,7 +4,6 @@ def maxWater(height):
     l = 0
     hmax = max(height)
     while (r - l) * hmax >= res:
-        print((r-l)*hmax)
         if height[l] < height[r]:
             area = height[l] * (r - l)
         else:

@@ -1,21 +1,15 @@
-def intToRoman(self, n):
-    val = [
-        1000, 900, 500, 400,
-        100, 90, 50, 40,
-        10, 9, 5, 4,
-        1
-    ]
-    syb = [
-        "M", "CM", "D", "CD",
-        "C", "XC", "L", "XL",
-        "X", "IX", "V", "IV",
-        "I"
-    ]
-    ans = ""
-    i = 0
-    while n > 0:
-        for _ in range(n//val[i]):
-            ans += syb[i]
-            n -= val[i]
-        i += 1
-    return ans
+def intToRoman(num):
+    units = ['', 'I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX']
+    dozens = ['', 'X', 'XX', 'XXX', 'XL', 'L', 'LX', 'LXX', 'LXXX', 'XC']
+    hundreds = ['', 'C', 'CC', 'CCC', 'CD', 'D', 'DC', 'DCC', 'DCCC', 'CM']
+
+    bb = ['', 'M', 'MM', 'MMM']
+
+    u = units[int(num % 10)]
+    d = dozens[int((num % 100)/10)]
+    h = hundreds[int((num % 1000)/100)]
+    b = bb[int(num/1000)]
+    # print(h,d,u)
+
+    roman = b + h+d + u
+    return roman
